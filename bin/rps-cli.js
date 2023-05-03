@@ -5,8 +5,8 @@ import rps from "../lib/rpsls.js";
 import helpRPS from "../lib/rpsls.js";
 import rulesRPS from "../lib/rpsls.js";
 const args = minimist(process.argv.slice(2), {
-	test: {
-     	   rules: "rules"
+	alias: {
+     	   r: "rules"
         }
 });
 
