@@ -9,7 +9,7 @@ if (args.h || args.help){
 	
 	process.exit();
 } else if (args.r || args.rules){
-	rules.RPS();
+	rulesRPS();
 	process.exit();
 } else {
  	var banker = args._[0];
