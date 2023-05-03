@@ -25,8 +25,19 @@ if (args.h || args.help){
 		console.log(JSON.stringify(result));
 		process.exit();
 	}
-
+	banker = banker.toLowerCase();
 	const result = rps(banker);
+	
+	if (!(typeof result == "undefined")) {
+		console.log(JSON.stringify(result));
+		process.exit();
+	}
+
+	
+	
+
+
+
 
 
 	process.exit();
