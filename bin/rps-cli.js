@@ -2,11 +2,7 @@
 
 import minimist from 'minimist';
 import { rps, helpRPS, rulesRPS } from "../lib/rpsls.js";
-const args = minimist(process.argv.slice(2), {
-	alias: {
-     	   r: "rules"
-        }
-});
+const args = minimist(process.argv.slice(2));
 
 if (args.h || args.help){
 	helpRPS();
