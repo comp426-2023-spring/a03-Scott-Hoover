@@ -28,5 +28,5 @@ if (args.h || args.help){
 	}
 
 
-process.exit();
+	process.exit();
 }
