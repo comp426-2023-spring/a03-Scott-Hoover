@@ -15,8 +15,13 @@
   "bugs": {
     "url": "https://github.com/comp426-2023-spring/a03-Scott-Hoover/issues"
   },
-  "homepage": "https://github.com/comp426-2023-spring/a03-Scott-Hoover#readme"
-  
-
-
+  "homepage": "https://github.com/comp426-2023-spring/a03-Scott-Hoover#readme",
+  "bin": {
+    "node-rps": "./bin/rps-cli.js",
+    "node-rpsls": "rpsls-cli.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
 }
