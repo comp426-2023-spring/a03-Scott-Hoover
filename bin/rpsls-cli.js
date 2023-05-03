@@ -13,6 +13,7 @@ if (args.h || args.help){
 	process.exit();
 } else {
 	var banker = args._[0];
+
 	if (!banker) {
 		const result = { "player": "rock" };
 		console.log(JSON.stringify(result));
