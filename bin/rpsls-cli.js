@@ -5,7 +5,7 @@ const args = minimist(process.argv.slice(2),{
 		            r: "rules"
 		        }
 });
-
+//test
 //add help + rules calling
 switch(true) {
     case (args.h || args.help):
