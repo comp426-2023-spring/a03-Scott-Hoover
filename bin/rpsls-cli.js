@@ -1,5 +1,36 @@
-#!/usr/bin/env node
+import {rpsls, expansionHelp, expansionRules} from "../lib/rpsls.js"
+import minimist from "minimist";
+const args = minimist(process.argv.slice(2),{
+	    alias: {
+		            r: "rules"
+		        }
+});
 
-import { rpsls } from "../lib/rpsls.js"
-fwkjf
-console.log(rpsls())
+//add help + rules calling
+switch(true) {
+    case (args.h || args.help):
+            expansionHelp();
+            process.exit();
+    case (args.r || args.rules):
+            expansionRules();
+            process.exit()
+    default:
+         var playerChoice = args._[0];
+
+         if (!playerChoice) {
+                 const result = { "player": "rock"};
+                 console.log(JSON.stringify(result));
+                 process.exit();
+         }
+                                                                                        
+
+     playerChoice = playerChoice.toLowerCase;
+                                                                                                                             const result = rpsls(playerChoice);
+
+
+     if (!(typeof result == "undefined")) {
+                                                                                                                                 console.log(JSON.stringify(result));
+                                                                                                                                process.exit();
+     }
+     process.exit();
+ }
