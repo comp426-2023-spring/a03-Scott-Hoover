@@ -1,36 +1,32 @@
-import {rpsls, helpRPSLS, rulesRPSLS} from "../lib/rpsls.js"
-import minimist from "minimist";
-const args = minimist(process.argv.slice(2),{
-	    alias: {
-		            r: "rules"
-		        }
-});
-//test
-//add help + rules calling
-switch(true) {
-    case (args.h || args.help):
-            expansionHelp();
-            process.exit();
-    case (args.r || args.rules):
-            expansionRules();
-            process.exit()
-    default:
-         var playerChoice = args._[0];
+#!/usr/bin/env node
 
-         if (!playerChoice) {
-                 const result = { "player": "rock"};
-                 console.log(JSON.stringify(result));
-                 process.exit();
-         }
-                                                                                        
+import minimist from 'minimist';
+import { rpsls, helpRPSLS, rulesRPSLS } from "../lib/rpsls.js";
+const args = minimist(process.argv.slice(2));
 
-     playerChoice = playerChoice.toLowerCase;
-                                                                                                                             const result = rpsls(playerChoice);
+if (args.h || args.help){
+	helpRPSLS();
+		
+	process.exit();
+} else if (args.r || args.rules){
+	rulesRPSLS();
+	process.exit();
+} else {
+	var banker = args._[0];
+
+	if (!banker) {
+		const result = { "player": "rock" };
+		console.log(JSON.stringify(result));
+		process.exit();
+	}
+	banker = banker.toLowerCase();
+	const result = rpsls(banker);
+
+	if (!(typeof result == "undefined")) {
+		console.log(JSON.stringify(result));
+		process.exit();
+	}
 
 
-     if (!(typeof result == "undefined")) {
-                                                                                                                                 console.log(JSON.stringify(result));
-                                                                                                                                process.exit();
-     }
-     process.exit();
- }
+	process.exit();
+}
