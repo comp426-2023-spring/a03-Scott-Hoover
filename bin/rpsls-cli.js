@@ -1,4 +1,4 @@
-import {rpsls, expansionHelp, expansionRules} from "../lib/rpsls.js"
+import {rpsls, helpRPSLS, rulesRPSLS} from "../lib/rpsls.js"
 import minimist from "minimist";
 const args = minimist(process.argv.slice(2),{
 	    alias: {
